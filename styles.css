@@ -1,0 +1,166 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+/* Snap Scrolling Behavior */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 1s ease;
+    scroll-snap-align: start;
+}
+
+/* Add different colored sections for visual effect */
+.home-section {
+    background-color: #333;
+}
+
+.skills-section {
+    background-color: #444;
+}
+
+.projects-section {
+    background-color: #555;
+}
+
+.certificates-section {
+    background-color: #666;
+}
+
+.experience-section {
+    background-color: #777;
+}
+
+/* Add smooth snapping behavior */
+body {
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    padding: 10px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    max-width: 700px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    height: 70px; /* Set the height to match icon size */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* For mobile and tablet screens */
+@media (max-width: 768px) {
+    .navbar {
+        width: 90%;
+        height: 60px; /* Reduce height for smaller screens */
+    }
+}
+
+/* Navigation items (PNG icons) */
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.nav-item img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1); /* Ensure icon visibility in dark mode */
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: #999;
+    transform: scale(1.1);
+}
+
+/* Theme Toggle Icon */
+.theme-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px; /* Slightly larger than the navbar height */
+    width: 90px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle img {
+    width: 50px;
+    height: 50px;
+    filter: invert(1); /* Dark mode icon inversion */
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    width: 50px; /* Shrink size to match other icons on hover */
+    height: 50px;
+    background-color: #666;
+}
+
+/* Dark Mode Styles */
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-mode .navbar {
+    background-color: #f5f5f5;
+}
+
+body.light-mode .nav-item {
+    background-color: #fff;
+    color: #fff;
+}
+
+body.light-mode .nav-item img,
+body.light-mode .theme-toggle img {
+    filter: invert(0); /* Normal icon colors in light mode */
+}
+
+body.light-mode .theme-toggle {
+    background-color: #fff;
+}
